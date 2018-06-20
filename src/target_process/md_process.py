@@ -18,7 +18,7 @@ def write_line(target_file, line):
 def __get_formatter_header_info(ab_src_path):
     formatter_header_info = {
         'title': '',
-        "date": time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime(os.path.getctime(ab_src_path)))
+        "date": time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime(os.path.getmtime(ab_src_path)))
     }
 
     title = ''
