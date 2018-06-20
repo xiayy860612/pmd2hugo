@@ -61,7 +61,7 @@ class SrcWalker:
         if file_ext == 'md':
             return ContentInfo(ContentType.MD, rel_sub_item_path)
         else:
-            print("Not support %s file" % (file_ext))
+            print("Not support %s file for %s format" % (rel_sub_item_path, file_ext))
             return None
 
             

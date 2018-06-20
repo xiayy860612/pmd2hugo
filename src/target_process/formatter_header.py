@@ -4,9 +4,14 @@ def __title_format(content):
     line = "\"title\" = \"%s\"" % content
     return line
 
+def __date_format(content):
+    line = "\"date\" = \"%s\"" % content
+    return line
+
 __line_tag = "+++"
 __formatter = {
     "title": __title_format,
+    "date": __date_format
 }
 
 def write_line(target_file, line):
