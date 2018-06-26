@@ -105,3 +105,6 @@ venv.bak/
 
 # virtual code
 .vscode/
+
+# ignore example hugo markdown
+example/hugo_md/
