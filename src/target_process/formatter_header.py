@@ -1,17 +1,22 @@
 import os
 
 def __title_format(content):
-    line = "\"title\" = \"%s\"" % content
+    line = "title = \"%s\"" % content
     return line
 
 def __date_format(content):
-    line = "\"date\" = \"%s\"" % content
+    line = "date = \"%s\"" % content
+    return line
+
+def __lastmod_format(content):
+    line = "lastmod = \"%s\"" % content
     return line
 
 __line_tag = "+++"
 __formatter = {
     "title": __title_format,
-    "date": __date_format
+    "date": __date_format,
+    "lastmod": __lastmod_format
 }
 
 def write_line(target_file, line):

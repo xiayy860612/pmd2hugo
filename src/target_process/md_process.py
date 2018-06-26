@@ -2,7 +2,7 @@ import os
 import time, datetime
 import re
 
-from config import app_config
+from utils import file_dir_time
 from target_process import formatter_header, TargetProcesser
 from src_content import ContentInfo, ContentType
 
@@ -16,16 +16,11 @@ def write_line(target_file, line):
     target_file.write(encode_line)
     target_file.write('\n'.encode("utf-8"))
 
-def __get_file_date(ab_src_path):
-    tz = datetime.timezone(datetime.timedelta(hours=app_config.time_zone))
-    epoch_timestamp = os.path.getmtime(ab_src_path)
-    dt = datetime.datetime.fromtimestamp(epoch_timestamp, tz)
-    return dt.isoformat()
-
 def __get_formatter_header_info(ab_src_path):
     formatter_header_info = {
         'title': '',
-        "date": __get_file_date(ab_src_path)
+        'date': file_dir_time.get_file_create_time(ab_src_path),
+        'lastmod': file_dir_time.get_file_last_modify_time(ab_src_path)
     }
 
     title = ''
