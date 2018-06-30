@@ -8,7 +8,7 @@ from src_content import ContentInfo, ContentType
 
 
 __title_pattern = re.compile(r'^#\s+(?P<title>.+)$')
-__img_pattern = re.compile(r'![[](?P<img_title>.+)[]][(](?P<img_path>.+)[)]')
+__img_pattern = re.compile(r'![[](?P<img_title>.*)[]][(](?P<img_path>.+)[)]')
 __remote_src_pattern = re.compile(r'^http[s]*://.+')
 
 def write_line(target_file, line):
